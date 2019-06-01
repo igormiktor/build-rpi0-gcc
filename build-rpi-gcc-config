@@ -1,0 +1,27 @@
+# Names of the files (with version) that will be used to build the Raspberry Pi Zero gcc toolchain
+
+
+# Number of parallel processes to use
+JOBS=6
+
+# Install location for the cross compiler
+PREFIX=/usr/local/rpi0
+
+# binutils name and version
+NAME_BINUTILS="binutils-2.28"
+
+# gcc name and version
+NAME_GCC="gcc-6.3.0"
+
+# glibc name and version
+NAME_GLIBC="glibc-2.24"
+
+# Kernel version to use
+# Set to kernel7 only to target RPi 3A+ and 3B
+#KERNELNEEDED=kernel7
+KERNELNEEDED=kernel
+
+# ARM verison to build
+# Set to armv7 only to target RPi 3A+ and 3B
+#ARMARCH=armv7
+ARMARCH=armv6
