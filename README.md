@@ -2,7 +2,7 @@
 Script to build a GCC cross-compiler for Raspberry Pi
 
 The script defaults to building a cross-compiler that works for Raspberry Pi models B, Zero, ZeroW, and 3.  However,
-this can be easily adjusted in the file "build-rpi-gcc-parameters" to make cross compilers targeting models 3A+ and 3B.
+this can be easily adjusted in the file "build-rpi-gcc-config" to make cross compilers targeting models 3A+ and 3B.
 
 In particular, in the file "build-rpi-gcc-config":
 * Set PREFIX to wherever you want the cross-compiler to be installed.
