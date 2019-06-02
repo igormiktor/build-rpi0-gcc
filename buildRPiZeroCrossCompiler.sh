@@ -74,13 +74,19 @@ echo "Building GCC..."
 cd $NAME_GCC
 echo "Setting up GCC prerequisites..."
 contrib/download_prerequisites
-echo "- Patching ubsan.c"
-cd gcc
-cp ubsan.c ubsan.c.orig
-sed -f ../../ubsanFix.sed ubsan.c.orig > ubsan.c.fixed
-cp ubsan.c.fixed ubsan.c
-cd ..
-cd ..
+
+# In GCC 6.3.x (common in RPi systems) need to fix usban.c
+VER63PATCH="-6.3"
+if [[ $NAME_GCC =~ $VER63PATCH ]]
+then
+    echo "- Patching ubsan.c in GCC 6.3.x"
+    cd gcc
+    cp ubsan.c ubsan.c.orig
+    sed -f ../../ubsanFix.sed ubsan.c.orig > ubsan.c.fixed
+    cp ubsan.c.fixed ubsan.c
+    cd ..
+    cd ..
+fi
 
 echo "- Partial build of GCC..."
 NAME_GCC_BLD=${NAME_GCC}_build
