@@ -14,6 +14,7 @@ In particular, in the file `build-rpi-gcc-config`:
 
 Before executing `buildRPiZeroCrossCompiler.sh`:
 * Make sure the directory $PREFIX and $PREFIX/bin exist (create empty versions if needed).
+* clone https://github.com/raspberrypi/linux.git in the directory "linux".
 * Make sure $PREFIX/bin is included in the default PATH so that the script can find the executables it creates.  You can temporarily (for the current terminal session) add it to the PATH as follows:
 
 ```
