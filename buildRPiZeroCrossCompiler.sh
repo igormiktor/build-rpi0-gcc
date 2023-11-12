@@ -19,20 +19,6 @@ makeDir()
 
 
 
-echo "Downloading sources.(if needed)..."
-if [ ! - d $NAME_BINUTILS ] && [ ! -f $NAME_BINUTILS.tar.bz2 ]; then
-    wget https://ftpmirror.gnu.org/binutils/$NAME_BINUTILS.tar.bz2
-fi
-
-if [ ! - d $NAME_GCC ] && [ ! -f $NAME_GCC.tar.gz ]; then
-    wget https://ftpmirror.gnu.org/gcc/$NAME_GCC/$NAME_GCC.tar.gz
-fi
-
-if [ ! - d $NAME_GLIBC ] && [ ! -f $NAME_GLIBC.tar.bz2 ]; then
-    wget https://ftpmirror.gnu.org/glibc/$NAME_GLIBC.tar.bz2
-fi
-
-
 cd $WORKING_DIR
 echo "Downloading and expanding $NAME_BINUTILS (if needed)..."
 if [ ! - d $NAME_BINUTILS ]; then
@@ -57,7 +43,7 @@ if [ ! - d $NAME_GCC ]; then
     echo "Extracting $NAME_GCC..."
     tar xf $NAME_GCC.tar.gz
 
-    #echo "Patching ${NAME_GCC}//libsanitizer/asan/asan_linux.cpp..."
+    echo "Patching ${NAME_GCC}//libsanitizer/asan/asan_linux.cpp..."
     VER10PATCH="-10"
     VER11PATCH="-11"
     VER12PATCH="-12"
