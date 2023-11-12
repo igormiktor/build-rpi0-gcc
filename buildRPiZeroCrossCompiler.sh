@@ -17,6 +17,11 @@ makeDir()
 	mkdir -p "$1"
 }
 
+# Temporarily change ownership of destination (do this early so script can run unattended until end)
+echo "Temporarily changing ownership of destination directory to $USER..."
+sudo chown -R $USER $PREFIX
+
+
 
 
 cd $WORKING_DIR
@@ -88,11 +93,6 @@ else
     echo "Downloading RPi Linux headers..."
     git clone --depth=1 https://github.com/raspberrypi/linux
 fi
-
-
-# Temporarily change ownership of destination
-echo "Temporarily changing ownership of destination directory to $USER..."
-sudo chown -R $USER $PREFIX
 
 
 echo "Copying kernel headers to cross-compiler destination folder..."
