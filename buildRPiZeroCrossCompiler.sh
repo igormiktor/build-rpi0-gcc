@@ -21,7 +21,7 @@ makeDir()
 
 cd $WORKING_DIR
 echo "Downloading and expanding $NAME_BINUTILS (if needed)..."
-if [ ! - d $NAME_BINUTILS ]; then
+if [ ! -d $NAME_BINUTILS ]; then
     if [ ! -f $NAME_BINUTILS.tar.bz2 ]; then
         echo "Downloading $NAME_BINUTILS..."
         wget https://ftpmirror.gnu.org/binutils/$NAME_BINUTILS.tar.bz2
@@ -35,7 +35,7 @@ fi
 
 cd $WORKING_DIR
 echo "Downloading and expanding $NAME_GCC (if needed)..."
-if [ ! - d $NAME_GCC ]; then
+if [ ! -d $NAME_GCC ]; then
     if [ ! -f $NAME_GCC.tar.gz ]; then
         echo "Downloading $NAME_GCC..."
         wget https://ftpmirror.gnu.org/gcc/$NAME_GCC/$NAME_GCC.tar.gz
@@ -67,7 +67,7 @@ fi
 
 cd $WORKING_DIR
 echo "Downloading and expanding $NAME_GLIBC (if needed)..."
-if [ ! - d $NAME_GLIBC ]; then
+if [ ! -d $NAME_GLIBC ]; then
     if [ ! -f $NAME_GLIBC.tar.bz2 ]; then
         echo "Downloading $NAME_GLIBC..."
         wget https://ftpmirror.gnu.org/glibc/$NAME_GLIBC.tar.bz2
