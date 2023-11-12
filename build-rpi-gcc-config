@@ -2,19 +2,19 @@
 
 
 # Number of parallel processes to use
-JOBS=6
+JOBS=12
 
 # Install location for the cross compiler
 PREFIX=/usr/local/rpi0
 
 # binutils name and version
-NAME_BINUTILS="binutils-2.28"
+NAME_BINUTILS="binutils-2.40"
 
 # gcc name and version
-NAME_GCC="gcc-6.3.0"
+NAME_GCC="gcc-12.2.0"
 
 # glibc name and version
-NAME_GLIBC="glibc-2.24"
+NAME_GLIBC="glibc-2.36"
 
 # Kernel version to use
 # Set to kernel7 only to target RPi 3A+ and 3B

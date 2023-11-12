@@ -1,0 +1,14 @@
+--- asan_linux.cpp.orig	2023-11-12 17:00:31.455170004 -0500
++++ asan_linux.cpp	2023-11-12 17:01:12.262738612 -0500
+@@ -65,6 +65,11 @@
+ #define ucontext_t xucontext_t
+ #endif
+ 
++#ifndef PATH_MAX
++#define PATH_MAX 4096
++#endif
++
++
+ typedef enum {
+   ASAN_RT_VERSION_UNDEFINED = 0,
+   ASAN_RT_VERSION_DYNAMIC,
