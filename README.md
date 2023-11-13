@@ -1,7 +1,7 @@
 # build-rpi-gcc
 Script to build a GCC cross-compiler for Raspberry Pi Zero and Zero W.
 
-This is current as of Nov 2023 and builds: GCC-12.2.0, Glibc-2.36, and Binutils-2.40 (as found on fresh installs of RRaspberry PI OS).
+This is current as of Nov 2023 and builds: GCC-12.2.0, Glibc-2.36, and Binutils-2.40 (as found on fresh installs of Raspberry PI OS on an RPi Zero).
 
 The script defaults to building a cross-compiler that is tuned for Raspberry Pi model Zero and Zero W.  However,
 this can be easily adjusted in the file `build-rpi-gcc-config` to make cross compilers targeting any other models.
