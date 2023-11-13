@@ -78,7 +78,7 @@ if [ ! -d $NAME_GLIBC ]; then
         wget https://ftpmirror.gnu.org/glibc/$NAME_GLIBC.tar.bz2
     fi
     echo "Extracting $NAME_GLIBC..."
-    wget https://ftpmirror.gnu.org/glibc/$NAME_GLIBC.tar.bz2
+    tar xf $NAME_GLIBC.tar.bz2
 else
     echo "$NAME_GLIBC already present"
 fi
@@ -133,7 +133,7 @@ cd $WORKING_DIR
 NAME_GLIBC_BLD=${NAME_GLIBC}_build
 makeDir $NAME_GLIBC_BLD
 cd $NAME_GLIBC_BLD
-../glibc-2.24/configure --prefix=$PREFIX/arm-linux-gnueabihf --build=$MACHTYPE --host=arm-linux-gnueabihf \
+../$NAME_GLIBC/configure --prefix=$PREFIX/arm-linux-gnueabihf --build=$MACHTYPE --host=arm-linux-gnueabihf \
     --target=arm-linux-gnueabihf --with-arch=$ARMARCH --with-fpu=vfp --with-float=hard \
     --with-headers=$PREFIX/arm-linux-gnueabihf/include --disable-multilib libc_cv_forced_unwind=yes
 make install-bootstrap-headers=yes install-headers
