@@ -14,7 +14,7 @@ set -e
 
 makeDir()
 {
-	sudo rm -rf "$1"
+	rm -rf "$1"
 	mkdir -p "$1"
 }
 
