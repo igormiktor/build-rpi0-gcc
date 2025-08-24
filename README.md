@@ -15,7 +15,7 @@ In particular, in the file `build-rpi-gcc-config`:
 * Set JOBS to the number of parallel make processes you want to run (this should be not more than the number of CPUs you have on your build system)
 
 Before executing `buildRPiZeroCrossCompiler.sh`:
-* Install the following: `sudo apt install texinfo cmake bison flex autoconf automake autotools-dev`
+* Install the following: `sudo apt install texinfo gawk cmake bison flex autoconf automake autotools-dev`
 * Make sure the directory $PREFIX and $PREFIX/bin exist (create empty versions if needed).
 * Make sure $PREFIX/bin is included in the default PATH so that the script can find the executables it creates.  You can temporarily (for the current terminal session) add it to the PATH as follows:
 
