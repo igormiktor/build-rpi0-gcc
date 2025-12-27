@@ -40,3 +40,10 @@ _bld
 *.exe
 *.out
 *.app
+
+# Building directories
+binutils*
+gcc*
+glibc*
+linux
+
