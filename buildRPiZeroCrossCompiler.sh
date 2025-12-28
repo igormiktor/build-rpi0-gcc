@@ -53,7 +53,8 @@ if [ ! -d "$NAME_GCC" ]; then
     VER10PATCH="-10"
     VER11PATCH="-11"
     VER12PATCH="-12"
-    if [[ $NAME_GCC =~ $VER10PATCH ]] || [[ $NAME_GCC =~ $VER11PATCH ]] || [[ $NAME_GCC =~ $VER12PATCH ]]
+    VER14PATCH="-14"
+    if [[ $NAME_GCC =~ $VER10PATCH ]] || [[ $NAME_GCC =~ $VER11PATCH ]] || [[ $NAME_GCC =~ $VER12PATCH ]] || [[ $NAME_GCC =~ $VER14PATCH ]]
     then
         echo "Patching ${NAME_GCC}/libsanitizer/asan/asan_linux.cpp..."
         cd "$WORKING_DIR"

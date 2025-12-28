@@ -1,4 +1,4 @@
-# Names of the files (with version) that will be used to build the Raspberry Pi Zero gcc toolchain
+# Names of the files (with version) that will be used to build the Raspberry Pi Zero 2 W gcc toolchain
 
 
 # Number of parallel processes to use
@@ -8,20 +8,35 @@ JOBS=12
 PREFIX=/usr/local/rpi0
 
 # binutils name and version
+# RPi Bookworm is v2.40
+# RPi Trixie is v2.44
 NAME_BINUTILS="binutils-2.40"
 
 # gcc name and version
+# RPi Bookworm is v12.2.0
+# RPi Trixie is v14.2.0
 NAME_GCC="gcc-12.2.0"
 
 # glibc name and version
+# RPi Bookworm is v2.36
+# RPi Trixie is v2.41
 NAME_GLIBC="glibc-2.36"
 
-# Kernel version to use
-# Set to kernel7 only to target RPi 3A+ and 3B
-#KERNELNEEDED=kernel7
-KERNELNEEDED=kernel
+# Kernel version to use (see: https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building)
+# Set to "kernel" to target all RPi versions in 32-bit; or more specifically:
+# Set to "kernel" to target 32-bit for RPi1 & PRi0, Rpi0 W
+# Set to "kernel7" to target 32-bit for RPi2, RPi3, RPi3+, and RPi0 2 W
+# Set to "kernel7l" to target 32-bit for RPi4
+# Set to "kernel8" to target 64-bit for RPi2, RPi3, RPi3+, and RPi0 2 W
+# Set to "kernel_2712" to target RPi5
+#KERNELNEEDED=kernel
+KERNELNEEDED=kernel7
 
-# ARM verison to build
-# Set to armv7 only to target RPi 3A+ and 3B
-#ARMARCH=armv7
+# ARM version to build for
+# Set to "armv6" to target all RPi versions.
+# In THEORY the following should work also: 
+# Set to "armv7" to target 32-bit for RPi2, RPi3, RPi3+, RPi4, and RPi0 2 W
+# Set to "armv8" to target 64-bit for RPi2, RPi3, RPi3+, RPiv4 and RPi0 2 W
+# But these other ARMARCH setting DO NOT WORK (at least for me).  Stick to "armv6"
+#ARMARCH=armv6
 ARMARCH=armv6
